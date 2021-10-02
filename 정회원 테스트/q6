@@ -1,0 +1,34 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class q6 {
+
+	public static void main(String[]args)throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String n = (br.readLine());
+		if(Integer.parseInt(n)<10) {
+			n = "0"+n;
+		}
+		
+		String new_n = "";
+		int c = 0;
+		int x;
+		while(true) {
+			if(new_n.equals(n)&&c!=0)break;
+			if(c==0) new_n = n;
+			x = Integer.parseInt(new_n.substring(0, 1))+Integer.parseInt(new_n.substring(1,2));
+
+			String x2 = Integer.toString(x);
+			if(x<10) {
+				x2 = "0"+x2;
+			}
+			new_n = new_n.substring(1,2)+x2.substring(1,2);
+			c++;
+
+			
+		}
+		System.out.println(c);
+	}
+
+}
